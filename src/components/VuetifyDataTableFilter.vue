@@ -47,12 +47,35 @@
         dessertFilterValue: '',
         caloriesFilterValue: null,
         // Table data.
-        desserts: tableData.data,
+        desserts: null,
       }
     },
+      beforeMount() {
+    let value = document.getElementById("info").attributes["data-vuetify"].value
+    let parsedValue = JSON.parse(decodeURIComponent(value));
+    if (parsedValue) 
+      this.desserts = parsedValue;
+  },
     computed: {
       headers() {
-        return tableData.headers
+        return [
+          {
+            text: 'Dessert (100g serving)',
+            align: 'left',
+            sortable: false,
+            value: 'name',
+            filter: this.nameFilter,
+          },
+          {
+            text: 'Calories',
+            value: 'calories',
+            filter: this.caloriesFilter,
+          },
+          {text: 'Fat (g)', value: 'fat'},
+          {text: 'Carbs (g)', value: 'carbs'},
+          {text: 'Protein (g)', value: 'protein'},
+          {text: 'Iron (%)', value: 'iron'},
+        ]
       },
     },
     methods: {

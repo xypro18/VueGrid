@@ -1,7 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { VueLoaderPlugin } = require('vue-loader')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 // const CompressionPlugin = require('compression-webpack-plugin');
 // const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -13,7 +13,7 @@ module.exports = {
         bundle: './src/main'
     },
     output: {
-        filename: "[name].js",
+        filename: "vue.js",
         path: path.resolve(__dirname, './dist'),
         publicPath: '/sourcingvue/resources/dist/',
         chunkFilename: "[id].[name].[chunkhash].js"
@@ -85,8 +85,8 @@ module.exports = {
       },
     plugins: [
         new CleanWebpackPlugin(),
+        new VueLoaderPlugin(),
         new VuetifyLoaderPlugin(),
-        new MiniCssExtractPlugin(),
-        new VueLoaderPlugin()
+        new MiniCssExtractPlugin()
     ]
 };

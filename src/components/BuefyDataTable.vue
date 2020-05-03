@@ -3,14 +3,19 @@
 </template>
 
 <script>
-import 'buefy/dist/buefy.min.css'
+import "buefy/dist/buefy.min.css";
 import sampleData from "./sampleBuefyData";
 export default {
   data() {
     return {
-      data: sampleData.data,
+      data: null,
       columns: sampleData.header
     };
+  },
+  beforeMount() {
+    let value = document.getElementById("info").attributes["data-beufy"].value;
+    let parsedValue = JSON.parse(decodeURIComponent(value));
+    if (parsedValue) this.data = parsedValue;
   }
 };
 </script>
