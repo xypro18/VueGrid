@@ -12,7 +12,8 @@
 <script>
 import VuetifyDataTable from "./components/VuetifyDataTable";
 import VuetifyDataTableFilter from "./components/VuetifyDataTableFilter";
-import BuefyDataTable from "./components/BuefyDataTable";
+//import BuefyDataTable from "./components/BuefyDataTable";
+const BuefyDataTable = () => import("./components/BuefyDataTable");
 
 export default {
   name: "App",

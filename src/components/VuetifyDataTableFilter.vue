@@ -52,24 +52,7 @@
     },
     computed: {
       headers() {
-        return [
-          {
-            text: 'Dessert (100g serving)',
-            align: 'left',
-            sortable: false,
-            value: 'name',
-            filter: this.nameFilter,
-          },
-          {
-            text: 'Calories',
-            value: 'calories',
-            filter: this.caloriesFilter,
-          },
-          {text: 'Fat (g)', value: 'fat'},
-          {text: 'Carbs (g)', value: 'carbs'},
-          {text: 'Protein (g)', value: 'protein'},
-          {text: 'Iron (%)', value: 'iron'},
-        ]
+        return tableData.headers
       },
     },
     methods: {

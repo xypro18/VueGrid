@@ -80,7 +80,21 @@ const desserts = [
         iron: '6%',
     },
 ];
+const columns = [
+    {
+      text: 'Dessert (100g serving)',
+      align: 'start',
+      sortable: false,
+      value: 'name',
+    },
+    { text: 'Calories', value: 'calories', sortable: true, filterable: true },
+    { text: 'Fat (g)', value: 'fat' },
+    { text: 'Carbs (g)', value: 'carbs' },
+    { text: 'Protein (g)', value: 'protein' },
+    { text: 'Iron (%)', value: 'iron' },
+  ];
 
 export default {
-    data: desserts
+    data: desserts,
+    headers: columns
 };
