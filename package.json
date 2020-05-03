@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start:dev": "webpack-dev-server --open"
+    "pack:build": "webpack -p",
+    "pack:serve": "webpack-dev-server --open"
   },
   "dependencies": {
     "buefy": "^0.8.0",

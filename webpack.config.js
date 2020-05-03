@@ -15,6 +15,7 @@ module.exports = {
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, './dist'),
+        publicPath: '/sourcingvue/resources/dist/',
         chunkFilename: "[id].[name].[chunkhash].js"
     },
     // optimization: {
@@ -29,8 +30,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            }, 
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
+              },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
